@@ -25,6 +25,9 @@ namespace FogTracker.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            // services.AddAuthentication().AddIdentityServerJwt();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
