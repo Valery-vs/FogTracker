@@ -1,4 +1,4 @@
-﻿namespace FogTracker.Data
+﻿namespace FogTracker.Model
 {
     using Entities;
     using Microsoft.EntityFrameworkCore;

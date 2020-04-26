@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FogTracker.Data\FogTracker.Data.csproj" />
+    <ProjectReference Include="..\FogTracker.Model\FogTracker.Model.csproj" />
   </ItemGroup>
 	
 </Project>

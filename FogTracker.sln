@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Data", "src\FogTracker.Data\FogTracker.Data.csproj", "{4FCF5A51-7FA0-4226-B2CE-3E8AD38E3722}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Web", "src\FogTracker.Web\FogTracker.Web.csproj", "{0F93714F-EEAD-47CE-ADAD-C752A3B4A62C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FogTrackerDbMigrationConsole", "src\FogTrackerDbMigrationConsole\FogTrackerDbMigrationConsole.csproj", "{F45129AF-42AE-44F9-8563-870577421FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTrackerDbMigrationConsole", "src\FogTrackerDbMigrationConsole\FogTrackerDbMigrationConsole.csproj", "{F45129AF-42AE-44F9-8563-870577421FB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Contracts", "src\FogTracker.Contracts\FogTracker.Contracts.csproj", "{A5A3EA27-12D9-4A9B-B925-10708F970D02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Repos", "src\FogTracker.Repos\FogTracker.Repos.csproj", "{5D23A6A2-7A47-43B0-A000-595BCF908C16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Model", "src\FogTracker.Model\FogTracker.Model.csproj", "{B23952E3-13B0-4F1D-B85B-FB5DD2F8C623}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4FCF5A51-7FA0-4226-B2CE-3E8AD38E3722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FCF5A51-7FA0-4226-B2CE-3E8AD38E3722}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FCF5A51-7FA0-4226-B2CE-3E8AD38E3722}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FCF5A51-7FA0-4226-B2CE-3E8AD38E3722}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F93714F-EEAD-47CE-ADAD-C752A3B4A62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F93714F-EEAD-47CE-ADAD-C752A3B4A62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F93714F-EEAD-47CE-ADAD-C752A3B4A62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +27,18 @@ Global
 		{F45129AF-42AE-44F9-8563-870577421FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F45129AF-42AE-44F9-8563-870577421FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F45129AF-42AE-44F9-8563-870577421FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A3EA27-12D9-4A9B-B925-10708F970D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A3EA27-12D9-4A9B-B925-10708F970D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A3EA27-12D9-4A9B-B925-10708F970D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A3EA27-12D9-4A9B-B925-10708F970D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D23A6A2-7A47-43B0-A000-595BCF908C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D23A6A2-7A47-43B0-A000-595BCF908C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D23A6A2-7A47-43B0-A000-595BCF908C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D23A6A2-7A47-43B0-A000-595BCF908C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23952E3-13B0-4F1D-B85B-FB5DD2F8C623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23952E3-13B0-4F1D-B85B-FB5DD2F8C623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23952E3-13B0-4F1D-B85B-FB5DD2F8C623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23952E3-13B0-4F1D-B85B-FB5DD2F8C623}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

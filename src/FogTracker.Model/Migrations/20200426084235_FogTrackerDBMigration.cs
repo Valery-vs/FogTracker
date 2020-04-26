@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FogTracker.Data.Migrations
+namespace FogTracker.Model.Migrations
 {
-    public partial class FogTrackerDB : Migration
+    public partial class FogTrackerDBMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,11 @@ namespace FogTracker.Data.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    EmailAddress = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(maxLength: 250, nullable: true),
+                    LastName = table.Column<string>(maxLength: 250, nullable: true),
+                    EmailAddress = table.Column<string>(maxLength: 250, nullable: true),
                     PictureUrl = table.Column<string>(nullable: true),
-                    Provider = table.Column<string>(nullable: true)
+                    Provider = table.Column<string>(maxLength: 20, nullable: true)
                 },
                 constraints: table =>
                 {

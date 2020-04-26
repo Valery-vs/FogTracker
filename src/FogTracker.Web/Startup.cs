@@ -1,13 +1,16 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 namespace FogTracker.Web
 {
+    using Contracts;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.HttpsPolicy;
+    using Microsoft.AspNetCore.SpaServices.AngularCli;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Model;
+    using Repos;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -26,6 +29,8 @@ namespace FogTracker.Web
                 configuration.RootPath = "ClientApp/dist";
             });
 
+            services.AddDbContext<FogContext>();
+            services.AddScoped<IUserRepository, UserRepository>();
             // services.AddAuthentication().AddIdentityServerJwt();
 
         }
