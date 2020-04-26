@@ -15,10 +15,15 @@
       Enter password!
     </div>
   </div>
-  <div class="row justify-content-center">
+  <div>
+    <div class="alert alert-danger w-100" *ngIf="loginErrors" role="alert">
+      {{loginErrors}}
+    </div>
+  </div>
+  <div>
     <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
-      <span *ngIf="isLogging" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-      <span *ngIf="!isLogging">Login</span>
+      <span *ngIf="isLoginProcessActive" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span *ngIf="!isLoginProcessActive">Login</span>
     </button>
   </div>
 </form>

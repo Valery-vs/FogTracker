@@ -11,6 +11,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AppRouting } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './_helpers/auth.guard ';
+import { AuthenticationService } from './_services/authentication.service ';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AuthGuard } from './_helpers/auth.guard ';
     ReactiveFormsModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
