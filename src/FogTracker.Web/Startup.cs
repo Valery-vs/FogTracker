@@ -30,7 +30,7 @@ namespace FogTracker.Web
             });
 
             services.AddDbContext<FogContext>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IFogRepository, ForRepository>();
             // services.AddAuthentication().AddIdentityServerJwt();
 
         }
