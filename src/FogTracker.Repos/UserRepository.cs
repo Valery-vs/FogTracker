@@ -1,6 +1,6 @@
 ﻿namespace FogTracker.Repos
 {
-    using Contracts;
+    using Contracts.Repositories;
     using Model;
     using Model.Entities;
 

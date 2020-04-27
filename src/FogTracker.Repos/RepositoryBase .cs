@@ -3,7 +3,7 @@
     using System;
     using System.Linq;
     using System.Linq.Expressions;
-    using Contracts;
+    using Contracts.Repositories;
     using Microsoft.EntityFrameworkCore;
     using Model;
 

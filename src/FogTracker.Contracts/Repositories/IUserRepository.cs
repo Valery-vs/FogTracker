@@ -1,4 +1,4 @@
-﻿namespace FogTracker.Contracts
+﻿namespace FogTracker.Contracts.Repositories
 {
     using Model.Entities;
 

@@ -1,26 +1,33 @@
 ﻿namespace FogTracker.Web.Controllers
 {
-    using System.Linq;
-    using Contracts;
+    using Contracts.Services;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using Model.Entities;
+    using ViewModel;
 
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountController : Controller
     {
-        private readonly IFogRepository fogRepository;
+        private readonly IAuthService authService;
 
-        public AccountController(IFogRepository fogRepository)
+        public AccountController(IAuthService authService)
         {
-            this.fogRepository = fogRepository;
+            this.authService = authService;
         }
 
-
+        [AllowAnonymous]
         [HttpPost("login")]
-        public IActionResult LoginByPassword(string login, string password)
+        public IActionResult LoginByPassword([FromBody] LoginViewModel model)
         {
-            return this.Ok();
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            var token = this.authService.Authenticate(model.Username, model.Password);
+            return this.Ok(token);
         }
     }
 }

@@ -8,13 +8,15 @@
         public string UserId { get; set; }
 
         [MaxLength(250)]
+        public string Username { get; set; }
+        [MaxLength(250)]
         public string FirstName { get; set; }
         [MaxLength(250)]
         public string LastName { get; set; }
         [MaxLength(250)]
         public string EmailAddress { get; set; }
         public string PictureUrl { get; set; }
-        [MaxLength(20)]
-        public string Provider { get; set; }
+
+        public string PasswordHash { get; set; }
     }
 }
