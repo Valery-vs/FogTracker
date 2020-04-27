@@ -8,12 +8,12 @@ export class AuthenticationService {
   }
 
   public login(username: string, password: string): Promise<any> {
-    return this.http.post<any>(`${this.apiUrl}/account/login`, { 'UserName': username, 'Password': password })
-      .pipe(map(user => {
+    return this.http.post<string>(`${this.apiUrl}/account/login`, { 'UserName': username, 'Password': password })
+      .pipe(map(token => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         // localStorage.setItem('currentUser', JSON.stringify(user));
         // this.currentUserSubject.next(user);
-        return user;
+        return token;
       })).toPromise();
   }
 

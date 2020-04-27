@@ -11,7 +11,7 @@ export class LoginComponent {
   public loginErrors: string;
 
   public loginForm = new FormGroup({
-    login: new FormControl('', this.isNullOrWhiteSpaceValidator),
+    username: new FormControl('', this.isNullOrWhiteSpaceValidator),
     password: new FormControl('', this.isNullOrWhiteSpaceValidator),
   });
 
