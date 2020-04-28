@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\FogTracker.Contracts\FogTracker.Contracts.csproj" />
+    <ProjectReference Include="..\..\Domain\FogTracker.Model\FogTracker.Model.csproj" />
+  </ItemGroup>
+
+</Project>

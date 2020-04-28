@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FogTracker.Model.Migrations
+namespace FogTracker.Data.Postgres.Migrations
 {
-    public partial class FogTrackerDBMigration : Migration
+    public partial class FogTrackerPostgres : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,12 @@ namespace FogTracker.Model.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
+                    Username = table.Column<string>(maxLength: 250, nullable: true),
                     FirstName = table.Column<string>(maxLength: 250, nullable: true),
                     LastName = table.Column<string>(maxLength: 250, nullable: true),
                     EmailAddress = table.Column<string>(maxLength: 250, nullable: true),
                     PictureUrl = table.Column<string>(nullable: true),
-                    Provider = table.Column<string>(maxLength: 20, nullable: true)
+                    PasswordHash = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

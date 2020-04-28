@@ -1,7 +1,7 @@
-﻿namespace FogTracker.Model
+﻿namespace FogTracker.Repos
 {
-    using Entities;
     using Microsoft.EntityFrameworkCore;
+    using Model.Entities;
 
     public class FogContext : DbContext
     {

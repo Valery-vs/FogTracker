@@ -3,6 +3,7 @@
 namespace FogTrackerDbMigrationConsole
 {
     using FogTracker.Model;
+    using FogTracker.Repos;
 
     class Program
     {

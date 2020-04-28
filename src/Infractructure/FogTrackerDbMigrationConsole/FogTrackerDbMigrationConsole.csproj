@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FogTracker.Model\FogTracker.Model.csproj" />
+    <ProjectReference Include="..\..\Domain\FogTracker.Model\FogTracker.Model.csproj" />
+    <ProjectReference Include="..\FogTracker.Data.Postgres\FogTracker.Data.Postgres.csproj" />
   </ItemGroup>
 	
 </Project>

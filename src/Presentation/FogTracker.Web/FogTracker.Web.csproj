@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FogTracker.Contracts\FogTracker.Contracts.csproj" />
-    <ProjectReference Include="..\FogTracker.Repos\FogTracker.Repos.csproj" />
+    <ProjectReference Include="..\..\Domain\FogTracker.Contracts\FogTracker.Contracts.csproj" />
+    <ProjectReference Include="..\..\Infractructure\FogTracker.Data.Postgres\FogTracker.Data.Postgres.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
