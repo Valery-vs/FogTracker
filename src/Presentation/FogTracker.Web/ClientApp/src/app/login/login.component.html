@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-4 offset-4">
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" class="form-control" id="username" formControlName="username"
+        [ngClass]="{'is-invalid':loginForm.get('username').touched && !loginForm.get('username').valid}">
+    <div class="invalid-feedback">
+          Enter username!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" id="password" formControlName="password"
+          [ngClass]="{'is-invalid':loginForm.get('password').touched && !loginForm.get('password').valid}">
+    <div class="invalid-feedback">
+      Enter password!
+    </div>
+  </div>
+  <div>
+    <div class="alert alert-danger w-100" *ngIf="loginErrors" role="alert">
+      {{loginErrors}}
+    </div>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+      <span *ngIf="isLoginProcessActive" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span *ngIf="!isLoginProcessActive">Login</span>
+    </button>
+  </div>
+</form>
