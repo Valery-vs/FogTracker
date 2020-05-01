@@ -3,7 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './_helpers/auth.guard ';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

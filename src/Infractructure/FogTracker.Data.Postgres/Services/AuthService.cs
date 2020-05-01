@@ -32,7 +32,7 @@
             // return null if user not found
             if (user == null)
             {
-                throw new AuthenticationException();
+                throw new AuthenticationException("Invalid username or password");
             }
 
             this.passwordService.VerifyHashedPassword(user.PasswordHash, password);

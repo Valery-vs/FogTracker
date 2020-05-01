@@ -36,7 +36,7 @@
             var providedPasswordHash = this.HashPassword(providedPassword);
             if (hashedPassword != providedPasswordHash)
             {
-                throw new AuthenticationException();
+                throw new AuthenticationException("Invalid username or password");
             }
         }
     }

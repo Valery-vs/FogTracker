@@ -10,8 +10,9 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AppRouting } from './app.routing';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './_helpers/auth.guard ';
-import { AuthenticationService } from './_services/authentication.service ';
+import { AuthGuard } from './_helpers/auth.guard';
+import { AuthenticationService } from './_services/authentication.service';
+import { AuthenticatedHttpInterceptor } from './_helpers/authenticatedHttpInterceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AuthenticationService } from './_services/authentication.service ';
   ],
   providers: [
     AuthGuard,
-    AuthenticationService
+    AuthenticationService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticatedHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

@@ -19,7 +19,7 @@
 
         [AllowAnonymous]
         [HttpPost("login")]
-        public IActionResult LoginByPassword([FromBody] LoginViewModel model)
+        public ActionResult<LoginResponse> LoginByPassword([FromBody] LoginViewModel model)
         {
             if (!this.ModelState.IsValid)
             {
@@ -27,7 +27,7 @@
             }
 
             var token = this.authService.Authenticate(model.Username, model.Password);
-            return this.Ok(token);
+            return new OkObjectResult(new LoginResponse { Token = token });
         }
     }
 }

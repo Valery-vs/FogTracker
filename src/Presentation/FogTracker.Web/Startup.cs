@@ -15,6 +15,7 @@ namespace FogTracker.Web
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.IdentityModel.Tokens;
+    using Middleware;
     using Services;
 
     public class Startup
@@ -37,7 +38,7 @@ namespace FogTracker.Web
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IPasswordHashService, PasswordHashService>();
 
-            var passwordServiceSettingsSection = this.Configuration.GetSection("PasswordServiceSettings");
+            var passwordServiceSettingsSection = this.Configuration.GetSection("PasswordHashServiceSettings");
             services.AddSingleton<IPasswordHashServiceSettings>(passwordServiceSettingsSection.Get<PasswordHashServiceSettings>());
 
             var authServiceSettingsSection = this.Configuration.GetSection("AuthServiceSettings");
@@ -68,13 +69,9 @@ namespace FogTracker.Web
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+            if (!env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
