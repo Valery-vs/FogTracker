@@ -1,7 +1,6 @@
-﻿namespace FogTracker.Repos
+﻿namespace FogTracker.Data.Postgres.Repositories
 {
     using Contracts.Repositories;
-    using Model;
 
     public class ForRepository : IFogRepository
     {

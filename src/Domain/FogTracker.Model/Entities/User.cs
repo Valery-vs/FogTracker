@@ -1,11 +1,13 @@
 ﻿namespace FogTracker.Model.Entities
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class User
     {
         [Key]
-        public string UserId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserId { get; set; }
 
         [MaxLength(250)]
         public string Username { get; set; }

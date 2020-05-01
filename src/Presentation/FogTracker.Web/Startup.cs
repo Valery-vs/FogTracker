@@ -3,6 +3,10 @@ namespace FogTracker.Web
     using System.Text;
     using Contracts.Repositories;
     using Contracts.Services;
+    using Data.Postgres;
+    using Data.Postgres.Repositories;
+    using Data.Postgres.Services;
+    using FogTracker.Services;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -11,8 +15,6 @@ namespace FogTracker.Web
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.IdentityModel.Tokens;
-    using Model;
-    using Repos;
     using Services;
 
     public class Startup
@@ -33,23 +35,27 @@ namespace FogTracker.Web
             services.AddDbContext<FogContext>();
             services.AddScoped<IFogRepository, ForRepository>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IPasswordHashService, PasswordHashService>();
 
-            var optionsSection = this.Configuration.GetSection("Settings");
-            services.Configure<Options>(optionsSection);
+            var passwordServiceSettingsSection = this.Configuration.GetSection("PasswordServiceSettings");
+            services.AddSingleton<IPasswordHashServiceSettings>(passwordServiceSettingsSection.Get<PasswordHashServiceSettings>());
 
-            var options = optionsSection.Get<Options>();
-            var key = Encoding.ASCII.GetBytes(options.Secret);
+            var authServiceSettingsSection = this.Configuration.GetSection("AuthServiceSettings");
+            var authServiceSettings = authServiceSettingsSection.Get<AuthServiceSettings>();
+            services.AddSingleton<IAuthServiceSettings>(authServiceSettingsSection.Get<AuthServiceSettings>());
+
+            var key = Encoding.ASCII.GetBytes(authServiceSettings.TokenSecret);
             services.AddAuthentication(
                 x =>
                 {
                     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 }).AddJwtBearer(
-                x =>
+                bearerOptions =>
                 {
-                    x.RequireHttpsMetadata = false;
-                    x.SaveToken = true;
-                    x.TokenValidationParameters = new TokenValidationParameters
+                    bearerOptions.RequireHttpsMetadata = false;
+                    bearerOptions.SaveToken = true;
+                    bearerOptions.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key),

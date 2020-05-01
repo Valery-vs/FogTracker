@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Domain\FogTracker.Contracts\FogTracker.Contracts.csproj" />
     <ProjectReference Include="..\..\Domain\FogTracker.Model\FogTracker.Model.csproj" />
   </ItemGroup>

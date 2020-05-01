@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Model", "src\Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Web", "src\Presentation\FogTracker.Web\FogTracker.Web.csproj", "{5CE14BCB-0457-4F5C-82F2-BBBE00DBAF2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTrackerDbMigrationConsole", "src\Infractructure\FogTrackerDbMigrationConsole\FogTrackerDbMigrationConsole.csproj", "{3E3EE139-117C-4258-BABF-8E4BD10D950D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FogTracker.Data.Postgres", "src\Infractructure\FogTracker.Data.Postgres\FogTracker.Data.Postgres.csproj", "{4F0C1216-2302-4F20-9947-696EA3ED0F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FogTracker.Services", "src\Domain\FogTracker.Services\FogTracker.Services.csproj", "{BDF0AEF7-EA3B-4DAA-A6BE-4273E0BB28BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +39,14 @@ Global
 		{5CE14BCB-0457-4F5C-82F2-BBBE00DBAF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CE14BCB-0457-4F5C-82F2-BBBE00DBAF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CE14BCB-0457-4F5C-82F2-BBBE00DBAF2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E3EE139-117C-4258-BABF-8E4BD10D950D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E3EE139-117C-4258-BABF-8E4BD10D950D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E3EE139-117C-4258-BABF-8E4BD10D950D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E3EE139-117C-4258-BABF-8E4BD10D950D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F0C1216-2302-4F20-9947-696EA3ED0F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F0C1216-2302-4F20-9947-696EA3ED0F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F0C1216-2302-4F20-9947-696EA3ED0F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F0C1216-2302-4F20-9947-696EA3ED0F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF0AEF7-EA3B-4DAA-A6BE-4273E0BB28BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF0AEF7-EA3B-4DAA-A6BE-4273E0BB28BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF0AEF7-EA3B-4DAA-A6BE-4273E0BB28BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF0AEF7-EA3B-4DAA-A6BE-4273E0BB28BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,8 +58,8 @@ Global
 		{F09EA8A8-EFBD-40D1-A01D-8C8BBB1E83AF} = {31B92542-C383-4AE4-A964-D1C86D5A272D}
 		{5697A401-1A4E-4F72-B85C-AEAB9164598A} = {31B92542-C383-4AE4-A964-D1C86D5A272D}
 		{5CE14BCB-0457-4F5C-82F2-BBBE00DBAF2D} = {DBEBE7D7-63C4-42FE-9B3F-8B9915822078}
-		{3E3EE139-117C-4258-BABF-8E4BD10D950D} = {8C42B06F-57B7-48D2-B4B2-117A9997C2C0}
 		{4F0C1216-2302-4F20-9947-696EA3ED0F2C} = {8C42B06F-57B7-48D2-B4B2-117A9997C2C0}
+		{BDF0AEF7-EA3B-4DAA-A6BE-4273E0BB28BF} = {31B92542-C383-4AE4-A964-D1C86D5A272D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A5A1DDD-EA80-4EA1-98FD-B165D90459CA}

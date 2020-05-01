@@ -1,11 +1,10 @@
-﻿namespace FogTracker.Repos
+﻿namespace FogTracker.Data.Postgres.Repositories
 {
     using System;
     using System.Linq;
     using System.Linq.Expressions;
     using Contracts.Repositories;
     using Microsoft.EntityFrameworkCore;
-    using Model;
 
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
